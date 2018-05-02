@@ -15,9 +15,15 @@ public class Notendurchschnitt {
 		}
 		durchschnitt = durchschnitt/Noten.length;
 		System.out.println(durchschnitt);
-		/**c.) Schreiben Sie eine Funktion AnzahlNoten die die Anzahl einer Note berechnet.
-		 *  Diese Funktion soll für jede Note einmal aufgerufen und damit der Notenspiegel berechnet werden. 
-		 *  Übergeben Sie der Funktion das Array und die zu berechnende Note als int.*/
+		
+		
+		System.out.println(" 1  2  3  4  5 \n I  I  I  I  I \n V  V  V  V  V\n"+Arrays.toString(notenspiegel(Noten)));
+	}
+	/**c.) Schreiben Sie eine Funktion AnzahlNoten die die Anzahl einer Note berechnet.
+	 *  Diese Funktion soll für jede Note einmal aufgerufen und damit der Notenspiegel berechnet werden. 
+	 *  Übergeben Sie der Funktion das Array und die zu berechnende Note als int.*/
+	
+	public static int[] notenspiegel(int[] Noten) {
 		int[] notenspiegel = new int[5];
 		for (int i = 0; i< Noten.length; i++) {
 			switch(Noten[i]) {
@@ -27,8 +33,6 @@ public class Notendurchschnitt {
 			case(4):notenspiegel[3]++;break;
 			case(5):notenspiegel[4]++;break;
 			}
-		}
-		System.out.println(" 1  2  3  4  5 \n I  I  I  I  I \n V  V  V  V  V\n"+Arrays.toString(notenspiegel));
+		}return notenspiegel;
 	}
-
 }
