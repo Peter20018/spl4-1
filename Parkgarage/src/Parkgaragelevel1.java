@@ -30,7 +30,7 @@ public class Parkgaragelevel1 {
 				System.out.println(warteliste);
 				
 			} else {
-				System.out.println("Auto park ein..." + auto);
+				System.out.println("Auto parkt ein..." + auto);
 				autosInGarage++;
 
 			}
