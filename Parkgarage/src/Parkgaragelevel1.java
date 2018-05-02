@@ -3,24 +3,26 @@ public class Parkgaragelevel1 {
 
 	public static void main(String[] args) {
 
-		int parkplaetze = 2;
+		int parkplaetze = 3;
 		int Autos = 4;
+		int[] Preis = {8, 6, 3};
+		
 		int maxAutoWarteliste = 0;
 		ArrayList <Integer> warteliste = new ArrayList();
-		String parken = "1 2 -1 3 4 -3 -4 -2";
+		String parken = "10 -10 8 -8 6 -6 1 -1";
 		String[] parkvorgaenge = parken.split(" ");
 		int maxAutosInGarage = 0;
 		int autosInGarage = 0;
+		int umsatz = 0;
 
 		for (int a = 0; a < parkvorgaenge.length; a++) {
-
 			int auto = Integer.parseInt(parkvorgaenge[a]);
-
 			if (auto < 0) {
 				System.out.println("Auto parkt aus...." + auto);
 				if (warteliste.contains((Integer)auto)) {
 					warteliste.remove((Integer)auto);
 					maxAutoWarteliste--;
+					umsatz += Preis[autosInGarage-1];
 				} else {
 					autosInGarage--;
 				}
@@ -32,6 +34,7 @@ public class Parkgaragelevel1 {
 			} else {
 				System.out.println("Auto parkt ein..." + auto);
 				autosInGarage++;
+				umsatz += Preis[autosInGarage-1] ;
 
 			}
 
@@ -39,7 +42,7 @@ public class Parkgaragelevel1 {
 				maxAutosInGarage = autosInGarage;
 			}
 		}
-		System.out.println("Es sind maxautos " + maxAutosInGarage + " und maxwartes " +  maxAutoWarteliste + warteliste);
+		System.out.println("Es sind maxautos " + maxAutosInGarage + " und maxwartes " +  maxAutoWarteliste + warteliste + " Umsatz: " +umsatz);
 
 	}
 
